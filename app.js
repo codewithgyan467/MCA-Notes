@@ -2,15 +2,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('theme-toggle-btn');
     const dropdown = document.getElementById('theme-dropdown');
     const options = document.querySelectorAll('.theme-option');
+    const audio = document.getElementById('axomia-audio');
 
-    // Load saved theme
+    let audioStarted = false;
+
+    // Load saved theme and set it
     const saved = localStorage.getItem('selectedTheme') || 'normal';
-    document.body.className = `theme-${saved}`;
+    setTheme(saved);
 
-    // Toggle dropdown
+    // Toggle dropdown on button click
     btn.addEventListener('click', (e) => {
         e.stopPropagation();
         dropdown.classList.toggle('active');
+        
+        // Play audio on first user interaction if normal theme is active
+        if (!audioStarted && document.body.classList.contains('theme-normal')) {
+            audioStarted = true;
+            audio.play().catch(() => { /* ignore play promise rejection */ });
+        }
     });
 
     // Close dropdown when clicking outside
@@ -24,13 +33,34 @@ document.addEventListener('DOMContentLoaded', () => {
     options.forEach(option => {
         option.addEventListener('click', () => {
             const theme = option.getAttribute('data-theme');
-            document.body.className = `theme-${theme}`;
+            setTheme(theme);
             localStorage.setItem('selectedTheme', theme);
             dropdown.classList.remove('active');
+
+            if (theme === 'normal' && !audioStarted) {
+                audioStarted = true;
+                audio.play().catch(() => { /* ignore */ });
+            }
         });
     });
 
-    // Navigation
+    // Theme setter function
+    function setTheme(theme) {
+        document.body.className = `theme-${theme}`;
+        if (theme === 'normal') {
+            if (audioStarted) {
+                audio.currentTime = 0;
+                audio.play().catch(() => { /* ignore */ });
+            }
+        } else {
+            if (audio) {
+                audio.pause();
+                audio.currentTime = 0;
+            }
+        }
+    }
+
+    // Navigation function
     window.navigateTo = (page) => {
         document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
         setTimeout(() => {
@@ -45,10 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.switchTab = (event, num, type) => {
         const card = event.target.closest('.module-card');
         if (!card) return;
-        
+
         card.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
         event.target.classList.add('active');
-        
+
         card.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
         const content = document.getElementById(`module-${num}-${type}`);
         if (content) content.classList.add('active');
