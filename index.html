@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Notes Hub - Your Complete Study Resource</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Homepage Section -->
+    <section id="homepage" class="page active">
+        <div class="animated-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="main-title">MCA Notes Hub</h1>
+                <p class="tagline">Your Complete MCA Study Resource</p>
+                
+                <div class="main-buttons">
+                    <div class="glass-card main-card" onclick="navigateTo('notes')">
+                        <div class="card-icon">📚</div>
+                        <h2>MCA Notes</h2>
+                        <p>Access comprehensive notes for all modules</p>
+                        <div class="card-arrow">→</div>
+                    </div>
+                    
+                    <div class="glass-card main-card" onclick="navigateTo('papers')">
+                        <div class="card-icon">📝</div>
+                        <h2>MCA Question Papers</h2>
+                        <p>Previous year question papers collection</p>
+                        <div class="card-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MCA Notes Section -->
+    <section id="notes-page" class="page">
+        <div class="animated-background"></div>
+        <div class="container">
+            <button class="back-button" onclick="navigateTo('home')">
+                <span class="back-arrow">←</span>
+                Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1 class="page-title">MCA Second Year Notes</h1>
+                <p class="page-subtitle">Select a module to view notes</p>
+            </div>
+            
+            <div class="modules-grid">
+                <!-- Theory Module 1: Computer Organization and Architecture -->
+                <div class="module-card glass-card" data-module="1">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202101</h3>
+                        <p class="module-name">Computer Organization and Architecture</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 1, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 1, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-1-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-1-pdf">
+                            <ul class="file-list">
+                                <li><a href="https://drive.google.com/file/d/1PZ2RF5gHNdHHKBlD3uoAD1idyWuvFAI9/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA cat -1.pdf</a></li>
+                                <li><a href="https://drive.google.com/file/d/1dV_RBAFLVuSftipxw8LC02AGDuW533r0/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA notes.pdf</a></li>
+                                <li><a href="https://drive.google.com/file/d/1nAyL5kuxJMMu27POVXWF-jWbR9laLVbR/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA....pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Theory Module 2: Design and Analysis of Algorithms -->
+                <div class="module-card glass-card" data-module="2">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202102</h3>
+                        <p class="module-name">Design and Analysis of Algorithms</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 2, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 2, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-2-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-2-pdf">
+                            <ul class="file-list">
+                                <li><a href="MCA/ADS Q.paper 2022.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>ADS Q.paper 2022.pdf</a></li>
+                                <li><a href="MCA/Cormen_Algorithms_3rd.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Cormen_Algorithms_3rd.pdf</a></li>
+                                <li><a href="MCA/DAA 2021 Q.paper.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>DAA 2021 Q.paper.pdf</a></li>
+                                <li><a href="MCA/Daa 2022 Qpaper.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Daa 2022 Qpaper.pdf</a></li>
+                                <li><a href="MCA/DAA....pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>DAA....pdf</a></li>
+                                <li><a href="MCA/daa.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>daa.pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Theory Module 3: Programming Techniques using Python and Java -->
+                <div class="module-card glass-card" data-module="3">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202103</h3>
+                        <p class="module-name">Programming Techniques using Python and Java</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 3, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 3, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-3-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-3-pdf">
+                            <ul class="file-list">
+                                <li><a href="MCA/C3 OOP Concepts1.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>C3 OOP Concepts1.pdf</a></li>
+                                <li><a href="MCA/JAVA CAT-1.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>JAVA CAT-1.pdf</a></li>
+                                <li><a href="MCA/Java notes.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Java notes.pdf</a></li>
+                                <li><a href="MCA/Python & Java , OS , Co&A 2022 Qpaper.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Python & Java, OS, Co&A 2022 Qpaper.pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Theory Module 4: Advanced Database Systems -->
+                <div class="module-card glass-card" data-module="4">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202104</h3>
+                        <p class="module-name">Advanced Database Systems</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 4, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 4, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-4-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-4-pdf">
+                            <ul class="file-list">
+                                <li><a href="MCA/DBMS/DBMS @24.4.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @24.4.pptx</a></li>
+                                <li><a href="MCA/DBMS/Concurrency Control.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>Concurrency Control.pptx</a></li>
+                                <li><a href="MCA/DBMS/ctest#1Adv DBMS 24.docx" target="_blank" class="file-link"><span class="file-icon">📝</span>ctest#1Adv DBMS 24.docx</a></li>
+                                <li><a href="MCA/DBMS/DBMS @25.1.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.1.pptx</a></li>
+                                <li><a href="MCA/DBMS/DBMS @25.2.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.2.pptx</a></li>
+                                <li><a href="MCA/DBMS/DBMS @25.3.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.3.pptx</a></li>
+                                <li><a href="MCA/DBMS/DBMS @25.4.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.4.pptx</a></li>
+                                <li><a href="MCA/DBMS/DBMS @25.5.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.5.pptx</a></li>
+                                <li><a href="MCA/DBMS/dbms class.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>dbms class.pptx</a></li>
+                                <li><a href="MCA/DBMS/DEADLOCKS.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>DEADLOCKS.pptx</a></li>
+                                <li><a href="MCA/DBMS/Integrity constraints and Fun Dep.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>Integrity constraints and Fun Dep.pptx</a></li>
+                                <li><a href="MCA/DBMS/NORMALIZATION.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>NORMALIZATION.pptx</a></li>
+                                <li><a href="MCA/DBMS/parallel database.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>parallel database.pptx</a></li>
+                                <li><a href="MCA/DBMS/Querry Optimization.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>Querry Optimization.pptx</a></li>
+                                <li><a href="MCA/DBMS/Querry processing and Indexing, Hashing.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>Querry processing and Indexing, Hashing.pptx</a></li>
+                                <li><a href="MCA/DBMS/RECOVERY SYSTEM.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>RECOVERY SYSTEM.pptx</a></li>
+                                <li><a href="MCA/DBMS/Transactions and Serializability.pptx" target="_blank" class="file-link"><span class="file-icon">📊</span>Transactions and Serializability.pptx</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Theory Module 5: Operating Systems -->
+                <div class="module-card glass-card" data-module="5">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202105</h3>
+                        <p class="module-name">Operating Systems</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 5, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 5, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-5-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-5-pdf">
+                            <ul class="file-list">
+                                <li><a href="MCA/Abraham-Silberschatz-Operating-System-Concepts.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Abraham-Silberschatz-Operating-System-Concepts.pdf</a></li>
+                                <li><a href="MCA/OS cat -1.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>OS cat -1.pdf</a></li>
+                                <li><a href="MCA/OS Question Paper (2019).pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>OS Question Paper (2019).pdf</a></li>
+                                <li><a href="MCA/OS-1.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>OS-1.pdf</a></li>
+                                <li><a href="MCA/OS....pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>OS....pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Practical Module 6: Laboratory -->
+                <div class="module-card glass-card" data-module="6">
+                    <div class="module-header">
+                        <span class="category-tag practical">Practical</span>
+                        <h3 class="module-code">MCA202116</h3>
+                        <p class="module-name">Laboratory- Java and Assembly Language Programming</p>
+                    </div>
+                    <div class="module-body">
+                        <div class="tabs">
+                            <button class="tab active" onclick="switchTab(event, 6, 'image')">Image Notes</button>
+                            <button class="tab" onclick="switchTab(event, 6, 'pdf')">PDF Notes</button>
+                        </div>
+                        <div class="tab-content active" id="module-6-image">
+                            <div class="upload-placeholder">
+                                <span class="placeholder-icon">🖼️</span>
+                                <p>Image notes will be uploaded soon</p>
+                            </div>
+                        </div>
+                        <div class="tab-content" id="module-6-pdf">
+                            <ul class="file-list">
+                                <li><a href="MCA/JAVA CAT-1.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>JAVA CAT-1.pdf</a></li>
+                                <li><a href="MCA/Java notes.pdf" target="_blank" class="file-link"><span class="file-icon">📄</span>Java notes.pdf</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- MCA Question Papers Section -->
+    <section id="papers-page" class="page">
+        <div class="animated-background"></div>
+        <div class="container">
+            <button class="back-button" onclick="navigateTo('home')">
+                <span class="back-arrow">←</span>
+                Back to Home
+            </button>
+            
+            <div class="page-header">
+                <h1 class="page-title">Previous Year Question Papers</h1>
+                <p class="page-subtitle">Select a module to view question papers</p>
+            </div>
+            
+            <div class="modules-grid">
+                <!-- Question Paper Module 1 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202101</h3>
+                        <p class="module-name">Computer Organization and Architecture</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/COA cat -1.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>COA CAT-1 Question Paper</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Question Paper Module 2 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202102</h3>
+                        <p class="module-name">Design and Analysis of Algorithms</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/ADS Q.paper 2022.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>ADS Q.paper 2022</a></li>
+                            <li><a href="MCA/DAA 2021 Q.paper.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>DAA 2021 Q.paper</a></li>
+                            <li><a href="MCA/Daa 2022 Qpaper.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>DAA 2022 Qpaper</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Question Paper Module 3 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202103</h3>
+                        <p class="module-name">Programming Techniques using Python and Java</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/JAVA CAT-1.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>JAVA CAT-1 Paper</a></li>
+                            <li><a href="MCA/Python & Java , OS , Co&A 2022 Qpaper.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>Python, Java, OS, Co&A 2022 Combined Paper</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Question Paper Module 4 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202104</h3>
+                        <p class="module-name">Advanced Database Systems</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/DBMS/ctest#1Adv DBMS 24.docx" target="_blank" class="file-link"><span class="file-icon">📝</span>Advanced DBMS Test 2024</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Question Paper Module 5 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">Theory</span>
+                        <h3 class="module-code">MCA202105</h3>
+                        <p class="module-name">Operating Systems</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="OS cat -1.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>OS CAT-1 Paper</a></li>
+                            <li><a href="OS Question Paper (2019).pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>OS Question Paper (2019)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Question Paper Module 6 -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag practical">Practical</span>
+                        <h3 class="module-code">MCA202116</h3>
+                        <p class="module-name">Laboratory- Java and Assembly Language Programming</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/JAVA CAT-1.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>JAVA CAT-1 Paper</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- General Question Papers -->
+                <div class="question-paper-card glass-card">
+                    <div class="module-header">
+                        <span class="category-tag theory">General</span>
+                        <h3 class="module-code">GENERAL</h3>
+                        <p class="module-name">Semester Question Papers</p>
+                    </div>
+                    <div class="module-body">
+                        <ul class="file-list">
+                            <li><a href="MCA/1st sem 2023.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>1st Semester 2023</a></li>
+                            <li><a href="MCA/1st sem 2024.pdf" target="_blank" class="file-link"><span class="file-icon">📝</span>1st Semester 2024</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="app.js"></script>
+</body>
+</html>
