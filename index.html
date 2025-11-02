@@ -3,359 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCA Notes Hub - Your Complete Study Resource</title>
+    <title>MCA Notes Hub</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-    <!-- Homepage Section -->
-    <section id="homepage" class="page active">
-        <div class="animated-background"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="main-title">MCA Notes Hub</h1>
-                <p class="tagline">Your Complete MCA Study Resource</p>
-                
-                <div class="main-buttons">
-                    <div class="glass-card main-card" onclick="navigateTo('notes')">
-                        <div class="card-icon">📚</div>
-                        <h2>MCA Notes</h2>
-                        <p>Access comprehensive notes for all modules</p>
-                        <div class="card-arrow">→</div>
-                    </div>
-                    
-                    <div class="glass-card main-card" onclick="navigateTo('papers')">
-                        <div class="card-icon">📝</div>
-                        <h2>MCA Question Papers</h2>
-                        <p>Previous year question papers collection</p>
-                        <div class="card-arrow">→</div>
-                    </div>
+<body class="theme-normal">
+
+<!-- Theme Selector -->
+<div class="theme-selector-container">
+    <button class="theme-toggle-btn" id="theme-toggle-btn">🎨 Theme</button>
+    <div class="theme-dropdown" id="theme-dropdown">
+        <button class="theme-option" data-theme="girly">💕 Girly</button>
+        <button class="theme-option" data-theme="boy">🦇 Boy</button>
+        <button class="theme-option" data-theme="normal">✨ Normal</button>
+    </div>
+</div>
+
+<!-- Home Page -->
+<section id="homepage" class="page active">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="main-title">MCA Notes Hub</h1>
+            <p class="tagline">Your Complete Study Resource</p>
+            <div class="main-buttons">
+                <div class="glass-card main-card" onclick="navigateTo('notes')">
+                    <div class="card-icon">📚</div>
+                    <h2>MCA Notes</h2>
+                    <p>Comprehensive notes for all modules</p>
+                    <div class="card-arrow">→</div>
+                </div>
+                <div class="glass-card main-card" onclick="navigateTo('papers')">
+                    <div class="card-icon">📝</div>
+                    <h2>Question Papers</h2>
+                    <p>Previous year papers</p>
+                    <div class="card-arrow">→</div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- MCA Notes Section -->
-    <section id="notes-page" class="page">
-        <div class="animated-background"></div>
-        <div class="container">
-            <button class="back-button" onclick="navigateTo('home')">
-                <span class="back-arrow">←</span>
-                Back to Home
-            </button>
-            
-            <div class="page-header">
-                <h1 class="page-title">MCA Second Year Notes</h1>
-                <p class="page-subtitle">Select a module to view notes</p>
-            </div>
-            
-            <div class="modules-grid">
-                <!-- Theory Module 1: Computer Organization and Architecture -->
-                <div class="module-card glass-card" data-module="1">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202101</h3>
-                        <p class="module-name">Computer Organization and Architecture</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 1, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 1, 'pdf')">PDF Notes</button>
-                        </div>
-                        <div class="tab-content active" id="module-1-image">
-                            <div class="image-container">
-                                <img src="coa.jpg" alt="Computer Organization and Architecture Notes" class="module-image">
-                            </div>
-                        </div>
-                        <div class="tab-content" id="module-1-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://drive.google.com/file/d/1PZ2RF5gHNdHHKBlD3uoAD1idyWuvFAI9/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA cat -1.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1dV_RBAFLVuSftipxw8LC02AGDuW533r0/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA notes.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1nAyL5kuxJMMu27POVXWF-jWbR9laLVbR/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>COA....pdf</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theory Module 2: Design and Analysis of Algorithms -->
-                <div class="module-card glass-card" data-module="2">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202102</h3>
-                        <p class="module-name">Design and Analysis of Algorithms</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 2, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 2, 'pdf')">PDF Notes</button>
-                        </div>
-                        <div class="tab-content active" id="module-2-image">
-                            <div class="image-container">
-                                <img src="daa.jpg" alt="Design and Analysis of Algorithms Notes" class="module-image">
-                            </div>
-                        </div>
-                        <div class="tab-content" id="module-2-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://drive.google.com/file/d/1o8S7VN9zhkGSC1HsvSZVE7urbXJlpQkn/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>ADS Q.paper 2022.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1bT1AJ4WQb4mOoJWEUz6NWuH24ewGrQt_/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>Cormen_Algorithms_3rd.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1rXOAWpCQdcFpvRJfUDX8M6Oq3x8QjXBC/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>DAA 2021 Q.paper.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1UQUqzo6bXW2vTugbEhHIeNwE3ZXapjbR/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>Daa 2022 Qpaper.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1gj2oti52E12Yt4P7hzt4Ya3PbPrLmHlp/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>DAA....pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1nTkc2l7h1nUJmwTLUicKtrEqN4sqfDUq/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>daa.pdf</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theory Module 3: Programming Techniques using Python and Java -->
-                <div class="module-card glass-card" data-module="3">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202103</h3>
-                        <p class="module-name">Programming Techniques using Python and Java</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 3, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 3, 'pdf')">PDF Notes</button>
-                        </div>
-                        <div class="tab-content active" id="module-3-image">
-                            <div class="image-container">
-                                <img src="java.jpg" alt="Programming Techniques using Python and Java Notes" class="module-image">
-                            </div>
-                        </div>
-                        <div class="tab-content" id="module-3-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://drive.google.com/file/d/1pxBHUk9YdiAnLL0M2GmBd20jmqQDWBBO/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>JAVA CAT-1.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1EWiZ2zqiydVwKzhJLn8l7E9T-jNVxb-_/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>Java notes.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1fNCGpr8DzuPe-Q1-lhG5zkCCkERs8Ghl/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>Python & Java, OS, Co&A 2022 Qpaper.pdf</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theory Module 4: Advanced Database Systems -->
-                <div class="module-card glass-card" data-module="4">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202104</h3>
-                        <p class="module-name">Advanced Database Systems</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 4, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 4, 'pdf')">PDF Notes</button>
-                        </div>
-                        <div class="tab-content active" id="module-4-image">
-                            <div class="image-container">
-                                <img src="dbms.jpg" alt="Advanced Database Systems Notes" class="module-image">
-                            </div>
-                        </div>
-                        <div class="tab-content" id="module-4-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://docs.google.com/presentation/d/1_McsX4_VoyixvdwE0OX1n0FLnqyKNWjd/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @24.4.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1q-2w6hU2jCWZhA3RLtdklTPJhgWdSycy/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>Concurrency Control.pptx</a></li>
-                                <li><a href="https://docs.google.com/document/d/1RwGDmMkLBXaZzABGGI3M3pmla5vXmVYp/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📝</span>ctest#1Adv DBMS 24.docx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/13WIEOb9I43vUeahoJsJZlJjEZOACp4T8/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.1.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1ZVYrxW6RH5E6Piwej8WckVz13QXk9FpA/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.2.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1j0Ll7D4HmhWqfnKmY6A694AUEN3h36r4/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.3.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1qRS6u5ZUAbYAOBbxCWyFCUuwtTgbfPCG/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.4.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/15VR0pYpQVwlyB5BwdWEmVLQrMkezzQlI/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DBMS @25.5.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1L2uDXWpE_Qj_8vutWj6QDbW7bSefntng/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>dbms class.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1nhSCwDRoRRmZtINA3v9KErEeGVjAFbUO/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>DEADLOCKS.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1m-OKsMcyRuRrc8_GYui9r8ALV3rvzNnJ/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>Integrity constraints and Fun Dep.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1OBHq0yJ_FHRinH_pVqihsNitgiIBARFT/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>NORMALIZATION.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1yOvp-xT7hdn9yHxh0mKE4A0o29fUMPc5/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>parallel database.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1eHj0s4Ckf813LPhNOMUG2Ow05ROE2Etf/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>Querry Optimization.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1LaEryKY4E4fM4iPv83mMNNedfWtdv0F4/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>Querry processing and Indexing, Hashing.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1nzt99OKURqtYgB7QOA8KyjKpNDAx8YA0/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>RECOVERY SYSTEM.pptx</a></li>
-                                <li><a href="https://docs.google.com/presentation/d/1USbmIqyMc_AHOMsbaFeY6sTI09_6gCff/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📊</span>Transactions and Serializability.pptx</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Theory Module 5: Operating Systems -->
-                <div class="module-card glass-card" data-module="5">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202105</h3>
-                        <p class="module-name">Operating Systems</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 5, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 5, 'pdf')">PDF Notes</button>
-                        </div>
-                        <div class="tab-content active" id="module-5-image">
-                            <div class="image-container">
-                                <img src="os.jpg" alt="Operating Systems Notes" class="module-image">
-                            </div>
-                        </div>
-                        <div class="tab-content" id="module-5-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://drive.google.com/file/d/1qTgEpk1pUKpx3VqWq7_zsRqJLsJ4GOMM/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>Abraham-Silberschatz-Operating-System-Concepts.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1QFi08a01JyjvcbiX6kN75d40XneLE3zX/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>OS cat -1.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1gjpgQz-SXD1OTDuY32xc8jgyYo6uPe0p/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>OS Question Paper (2019).pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1QFi08a01JyjvcbiX6kN75d40XneLE3zX/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>OS-1.pdf</a></li>
-                                <li><a href="https://drive.google.com/file/d/1xPUBvR8eFVuKrwIS394V0QNyvCNkObyU/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📄</span>OS....pdf</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Practical Module 6: Laboratory -->
-                <div class="module-card glass-card" data-module="6">
-                    <div class="module-header">
-                        <span class="category-tag practical">Practical</span>
-                        <h3 class="module-code">MCA202116</h3>
-                        <p class="module-name">Laboratory- Java and Assembly Language Programming</p>
-                    </div>
-                    <div class="module-body">
-                        <div class="tabs">
-                            <button class="tab active" onclick="switchTab(event, 6, 'image')">Image Notes</button>
-                            <button class="tab" onclick="switchTab(event, 6, 'pdf')">PDF Notes</button>
-                        </div>
-                         <div class="tab-content active" id="module-5-image">
-                            <div class="image-container">
-                                <img src="javalab.png" alt="Operating Systems Notes" class="module-image">
-                            </div>
-                        </div>
-                       
-                        </div>
-                        <div class="tab-content" id="module-6-pdf">
-                            <ul class="file-list">
-                                <li><a href="https://github.com/codewithgyan467/java" target="_blank" class="file-link"><span class="file-icon">📄</span>Every Practical Available on The github repo just click here and please kindly install github because you are doing fkng MCA</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Notes Page -->
+<section id="notes-page" class="page">
+    <div class="container">
+        <button class="back-button" onclick="navigateTo('home')">← Back</button>
+        <div class="page-header">
+            <h1 class="page-title">MCA Notes</h1>
+            <p class="page-subtitle">Select a module</p>
         </div>
-    </section>
-
-    <!-- MCA Question Papers Section -->
-    <section id="papers-page" class="page">
-        <div class="animated-background"></div>
-        <div class="container">
-            <button class="back-button" onclick="navigateTo('home')">
-                <span class="back-arrow">←</span>
-                Back to Home
-            </button>
-            
-            <div class="page-header">
-                <h1 class="page-title">Previous Year Question Papers</h1>
-                <p class="page-subtitle">Select a module to view question papers</p>
+        <div class="modules-grid">
+            <!-- Module 1: Computer Organization and Architecture -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202101</h3>
+                    <p class="module-name">Computer Organization and Architecture</p>
+                </div>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 1, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 1, 'pdf')">PDF</button>
+                    </div>
+                    <div class="tab-content active" id="module-1-image">
+                        <img src="coa.jpg" alt="COA Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-1-pdf">
+                        <ul class="file-list">
+                            <li><a href="https://drive.google.com/file/d/1PZ2RF5gHNdHHKBlD3uoAD1idyWuvFAI9/view?usp=drive_link" target="_blank" class="file-link">📄 COA cat -1.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1dV_RBAFLVuSftipxw8LC02AGDuW533r0/view?usp=drive_link" target="_blank" class="file-link">📄 COA notes.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1nAyL5kuxJMMu27POVXWF-jWbR9laLVbR/view?usp=drive_link" target="_blank" class="file-link">📄 COA....pdf</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            
-            <div class="modules-grid">
-                <!-- Question Paper Module 1 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202101</h3>
-                        <p class="module-name">Computer Organization and Architecture</p>
+
+            <!-- Module 2: Design and Analysis of Algorithms -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202102</h3>
+                    <p class="module-name">Design and Analysis of Algorithms</p>
+                </div>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 2, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 2, 'pdf')">PDF</button>
                     </div>
-                    <div class="module-body">
+                    <div class="tab-content active" id="module-2-image">
+                        <img src="daa.jpg" alt="DAA Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-2-pdf">
                         <ul class="file-list">
-                            <li><a href="https://drive.google.com/file/d/1lhr_E3v_bpTh7wcN7bMhG-H9L4CSemGu/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>COA CAT-1 Question Paper</a></li>
+                            <li><a href="https://drive.google.com/file/d/1o8S7VN9zhkGSC1HsvSZVE7urbXJlpQkn/view?usp=drive_link" target="_blank" class="file-link">📄 ADS Q.paper 2022.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1bT1AJ4WQb4mOoJWEUz6NWuH24ewGrQt_/view?usp=drive_link" target="_blank" class="file-link">📄 Cormen_Algorithms_3rd.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1rXOAWpCQdcFpvRJfUDX8M6Oq3x8QjXBC/view?usp=drive_link" target="_blank" class="file-link">📄 DAA 2021 Q.paper.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1UQUqzo6bXW2vTugbEhHIeNwE3ZXapjbR/view?usp=drive_link" target="_blank" class="file-link">📄 Daa 2022 Qpaper.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gj2oti52E12Yt4P7hzt4Ya3PbPrLmHlp/view?usp=drive_link" target="_blank" class="file-link">📄 DAA....pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1nTkc2l7h1nUJmwTLUicKtrEqN4sqfDUq/view?usp=drive_link" target="_blank" class="file-link">📄 daa.pdf</a></li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question Paper Module 2 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202102</h3>
-                        <p class="module-name">Design and Analysis of Algorithms</p>
+            <!-- Module 3: Programming Techniques using Python and Java -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202103</h3>
+                    <p class="module-name">Programming Techniques using Python and Java</p>
+                </div>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 3, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 3, 'pdf')">PDF</button>
                     </div>
-                    <div class="module-body">
+                    <div class="tab-content active" id="module-3-image">
+                        <img src="java.jpg" alt="Java Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-3-pdf">
                         <ul class="file-list">
-                           
-                            <li><a href="https://drive.google.com/file/d/1rXOAWpCQdcFpvRJfUDX8M6Oq3x8QjXBC/view?usp=sharing" target="_blank" class="file-link"><span class="file-icon">📝</span>DAA 2021 Q.paper</a></li>
-                            <li><a href="https://drive.google.com/file/d/1UQUqzo6bXW2vTugbEhHIeNwE3ZXapjbR/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>DAA 2022 Qpaper</a></li>
+                            <li><a href="https://drive.google.com/file/d/1pxBHUk9YdiAnLL0M2GmBd20jmqQDWBBO/view?usp=drive_link" target="_blank" class="file-link">📄 JAVA CAT-1.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1EWiZ2zqiydVwKzhJLn8l7E9T-jNVxb-_/view?usp=drive_link" target="_blank" class="file-link">📄 Java notes.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1fNCGpr8DzuPe-Q1-lhG5zkCCkERs8Ghl/view?usp=drive_link" target="_blank" class="file-link">📄 Python & Java, OS, Co&A 2022 Qpaper.pdf</a></li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question Paper Module 3 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202103</h3>
-                        <p class="module-name">Programming Techniques using Python and Java</p>
+            <!-- Module 4: Advanced Database Systems -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202104</h3>
+                    <p class="module-name">Advanced Database Systems</p>
+                </div>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 4, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 4, 'pdf')">PDF</button>
                     </div>
-                    <div class="module-body">
+                    <div class="tab-content active" id="module-4-image">
+                        <img src="dbms.jpg" alt="DBMS Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-4-pdf">
                         <ul class="file-list">
-                            <li><a href="https://drive.google.com/file/d/1fNCGpr8DzuPe-Q1-lhG5zkCCkERs8Ghl/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>Python, Java, OS, Co&A 2022 Combined Paper</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1_McsX4_VoyixvdwE0OX1n0FLnqyKNWjd/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @24.4.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1q-2w6hU2jCWZhA3RLtdklTPJhgWdSycy/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 Concurrency Control.pptx</a></li>
+                            <li><a href="https://docs.google.com/document/d/1RwGDmMkLBXaZzABGGI3M3pmla5vXmVYp/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📝 ctest#1Adv DBMS 24.docx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/13WIEOb9I43vUeahoJsJZlJjEZOACp4T8/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @25.1.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1ZVYrxW6RH5E6Piwej8WckVz13QXk9FpA/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @25.2.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1j0Ll7D4HmhWqfnKmY6A694AUEN3h36r4/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @25.3.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1qRS6u5ZUAbYAOBbxCWyFCUuwtTgbfPCG/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @25.4.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/15VR0pYpQVwlyB5BwdWEmVLQrMkezzQlI/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DBMS @25.5.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1L2uDXWpE_Qj_8vutWj6QDbW7bSefntng/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 dbms class.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1nhSCwDRoRRmZtINA3v9KErEeGVjAFbUO/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 DEADLOCKS.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1m-OKsMcyRuRrc8_GYui9r8ALV3rvzNnJ/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 Integrity constraints and Fun Dep.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1OBHq0yJ_FHRinH_pVqihsNitgiIBARFT/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 NORMALIZATION.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1yOvp-xT7hdn9yHxh0mKE4A0o29fUMPc5/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 parallel database.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1eHj0s4Ckf813LPhNOMUG2Ow05ROE2Etf/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 Querry Optimization.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1LaEryKY4E4fM4iPv83mMNNedfWtdv0F4/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 Querry processing and Indexing, Hashing.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1nzt99OKURqtYgB7QOA8KyjKpNDAx8YA0/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 RECOVERY SYSTEM.pptx</a></li>
+                            <li><a href="https://docs.google.com/presentation/d/1USbmIqyMc_AHOMsbaFeY6sTI09_6cCff/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📊 Transactions and Serializability.pptx</a></li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question Paper Module 4 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202104</h3>
-                        <p class="module-name">Advanced Database Systems</p>
-                    </div>
-                    <div class="module-body">
-                        <ul class="file-list">
-                            <li><a href="https://docs.google.com/document/d/1RwGDmMkLBXaZzABGGI3M3pmla5vXmVYp/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link"><span class="file-icon">📝</span>Advanced DBMS Cat-1</a></li>
-                        <li><a href="https://drive.google.com/file/d/1o8S7VN9zhkGSC1HsvSZVE7urbXJlpQkn/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>Advanced DBMS Test 2024</a></li>
-                    </ul>
-                    </div>
+            <!-- Module 5: Operating Systems -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202105</h3>
+                    <p class="module-name">Operating Systems</p>
                 </div>
-
-                <!-- Question Paper Module 5 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">Theory</span>
-                        <h3 class="module-code">MCA202105</h3>
-                        <p class="module-name">Operating Systems</p>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 5, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 5, 'pdf')">PDF</button>
                     </div>
-                    <div class="module-body">
+                    <div class="tab-content active" id="module-5-image">
+                        <img src="os.jpg" alt="OS Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-5-pdf">
                         <ul class="file-list">
-                        <li><a href="https://drive.google.com/file/d/1gjpgQz-SXD1OTDuY32xc8jgyYo6uPe0p/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>OS Question Paper (2019)</a></li>
+                            <li><a href="https://drive.google.com/file/d/1qTgEpk1pUKpx3VqWq7_zsRqJLsJ4GOMM/view?usp=drive_link" target="_blank" class="file-link">📄 Abraham-Silberschatz-Operating-System-Concepts.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1QFi08a01JyjvcbiX6kN75d40XneLE3zX/view?usp=drive_link" target="_blank" class="file-link">📄 OS cat -1.pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1gjpgQz-SXD1OTDuY32xc8jgyYo6uPe0p/view?usp=drive_link" target="_blank" class="file-link">📄 OS Question Paper (2019).pdf</a></li>
+                            <li><a href="https://drive.google.com/file/d/1xPUBvR8eFVuKrwIS394V0QNyvCNkObyU/view?usp=drive_link" target="_blank" class="file-link">📄 OS....pdf</a></li>
                         </ul>
                     </div>
                 </div>
+            </div>
 
-                <!-- Question Paper Module 6 -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag practical">Practical</span>
-                        <h3 class="module-code">MCA202116</h3>
-                        <p class="module-name">Laboratory- Java and Assembly Language Programming</p>
-                    </div>
-                    <div class="module-body">
-                        <ul class="file-list">
-                            <li><a href=" " target="_blank" class="file-link"><span class="file-icon">📝</span>JAVA LAB CAT-1 Paper(Not available now)</a></li>
-                        </ul>
-                    </div>
+            <!-- Module 6: Laboratory -->
+            <div class="glass-card module-card">
+                <div class="module-header">
+                    <span class="category-tag practical">Practical</span>
+                    <h3 class="module-code">MCA202116</h3>
+                    <p class="module-name">Laboratory - Java and Assembly Language Programming</p>
                 </div>
-
-                <!-- General Question Papers -->
-                <div class="question-paper-card glass-card">
-                    <div class="module-header">
-                        <span class="category-tag theory">General</span>
-                        <h3 class="module-code">GENERAL</h3>
-                        <p class="module-name">Semester Question Papers</p>
+                <div class="module-body">
+                    <div class="tabs">
+                        <button class="tab active" onclick="switchTab(event, 6, 'image')">Image</button>
+                        <button class="tab" onclick="switchTab(event, 6, 'pdf')">PDF</button>
                     </div>
-                    <div class="module-body">
+                    <div class="tab-content active" id="module-6-image">
+                        <img src="javalab.png" alt="Lab Notes" class="module-image">
+                    </div>
+                    <div class="tab-content" id="module-6-pdf">
                         <ul class="file-list">
-                            <li><a href="https://drive.google.com/file/d/1n-BbLJb5P4_MhDQCHf7cBUyVcJwn29fO/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>1st Semester 2023</a></li>
-                            <li><a href="https://drive.google.com/file/d/1DDqPJtt5T-nKCKHZAZCJvG7yy4LCiFjx/view?usp=drive_link" target="_blank" class="file-link"><span class="file-icon">📝</span>1st Semester 2024</a></li>
+                            <li><a href="https://github.com/codewithgyan467/java" target="_blank" class="file-link">📄 Every Practical Available on GitHub repo - Click here and please kindly install github</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="app.js"></script>
+<!-- Papers Page -->
+<section id="papers-page" class="page">
+    <div class="container">
+        <button class="back-button" onclick="navigateTo('home')">← Back</button>
+        <div class="page-header">
+            <h1 class="page-title">Question Papers</h1>
+            <p class="page-subtitle">Previous year papers</p>
+        </div>
+        <div class="modules-grid">
+            <!-- Paper 1 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202101</h3>
+                    <p class="module-name">Computer Organization and Architecture</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://drive.google.com/file/d/1lhr_E3v_bpTh7wcN7bMhG-H9L4CSemGu/view?usp=drive_link" target="_blank" class="file-link">📝 COA CAT-1 Question Paper</a></li>
+                </ul>
+            </div>
+
+            <!-- Paper 2 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202102</h3>
+                    <p class="module-name">Design and Analysis of Algorithms</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://drive.google.com/file/d/1rXOAWpCQdcFpvRJfUDX8M6Oq3x8QjXBC/view?usp=sharing" target="_blank" class="file-link">📝 DAA 2021 Q.paper</a></li>
+                    <li><a href="https://drive.google.com/file/d/1UQUqzo6bXW2vTugbEhHIeNwE3ZXapjbR/view?usp=drive_link" target="_blank" class="file-link">📝 DAA 2022 Qpaper</a></li>
+                </ul>
+            </div>
+
+            <!-- Paper 3 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202103</h3>
+                    <p class="module-name">Programming Techniques using Python and Java</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://drive.google.com/file/d/1fNCGpr8DzuPe-Q1-lhG5zkCCkERs8Ghl/view?usp=drive_link" target="_blank" class="file-link">📝 Python, Java, OS, Co&A 2022 Combined Paper</a></li>
+                </ul>
+            </div>
+
+            <!-- Paper 4 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202104</h3>
+                    <p class="module-name">Advanced Database Systems</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://docs.google.com/document/d/1RwGDmMkLBXaZzABGGI3M3pmla5vXmVYp/edit?usp=drive_link&ouid=114000386180503031772&rtpof=true&sd=true" target="_blank" class="file-link">📝 Advanced DBMS Cat-1</a></li>
+                    <li><a href="https://drive.google.com/file/d/1o8S7VN9zhkGSC1HsvSZVE7urbXJlpQkn/view?usp=drive_link" target="_blank" class="file-link">📝 Advanced DBMS Test 2024</a></li>
+                </ul>
+            </div>
+
+            <!-- Paper 5 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">Theory</span>
+                    <h3 class="module-code">MCA202105</h3>
+                    <p class="module-name">Operating Systems</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://drive.google.com/file/d/1gjpgQz-SXD1OTDuY32xc8jgyYo6uPe0p/view?usp=drive_link" target="_blank" class="file-link">📝 OS Question Paper (2019)</a></li>
+                </ul>
+            </div>
+
+            <!-- Paper 6 -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag practical">Practical</span>
+                    <h3 class="module-code">MCA202116</h3>
+                    <p class="module-name">Laboratory - Java and Assembly Language Programming</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="#" class="file-link">📝 JAVA LAB CAT-1 Paper (Not available now)</a></li>
+                </ul>
+            </div>
+
+            <!-- General Papers -->
+            <div class="glass-card">
+                <div class="module-header">
+                    <span class="category-tag theory">General</span>
+                    <h3 class="module-code">GENERAL</h3>
+                    <p class="module-name">Semester Question Papers</p>
+                </div>
+                <ul class="file-list">
+                    <li><a href="https://drive.google.com/file/d/1n-BbLJb5P4_MhDQCHf7cBUyVcJwn29fO/view?usp=drive_link" target="_blank" class="file-link">📝 1st Semester 2023</a></li>
+                    <li><a href="https://drive.google.com/file/d/1DDqPJtt5T-nKCKHZAZCJvG7yy4LCiFjx/view?usp=drive_link" target="_blank" class="file-link">📝 1st Semester 2024</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="app.js"></script>
 </body>
 </html>

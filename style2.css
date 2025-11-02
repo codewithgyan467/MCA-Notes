@@ -1,0 +1,95 @@
+body {
+  background: linear-gradient(#cfe7fa 0%, #6393c1 100%);
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  margin-bottom: 18px;
+  color: #1e3355;
+}
+
+button {
+  font-size: 1.1rem;
+  padding: 10px 30px;
+  margin: 10px 8px;
+  border: none;
+  background: #2873c7;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(60,80,150,0.1);
+  transition: background 0.2s;
+}
+button:hover {
+  background: #165090;
+}
+
+input[type=file] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.preview-img {
+  margin-top: 5px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  display: block;
+  border: 2px solid #2873c7;
+  border-radius: 50%;
+}
+
+#game-canvas {
+  background: #d3eafd;
+  border: 2px solid #0b2447;
+  margin: 18px 0 10px 0;
+  border-radius: 16px;
+  box-shadow: 0 2px 24px rgba(44,66,109,0.15);
+  touch-action: manipulation;
+}
+
+#score-display {
+  font-size: 1.4rem;
+  color: #234e8b;
+  background: rgba(255,255,255,0.87);
+  border-radius: 8px;
+  padding: 4px 14px;
+  margin-bottom: 4px;
+  position: absolute;
+  left: 32px; top: 28px;
+}
+#jump-instruction {
+  font-size: 1.15rem;
+  color: #036cbc;
+  background: rgba(255,255,255,0.87);
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  right: 32px; top: 28px;
+}
+
+@media (max-width: 900px) {
+  #game-canvas {
+    width: 100vw !important;
+    height: 68vw !important;
+    max-width: 100vw;
+    max-height: 76vw;
+  }
+  body {
+    font-size: 15px;
+  }
+  .screen {
+    min-height: 92vh;
+  }
+}

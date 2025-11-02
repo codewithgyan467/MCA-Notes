@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Endless Runner Game</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+  <!-- Device Selection -->
+  <div id="device-select" class="screen">
+    <h1>Endless Runner</h1>
+    <p>Select your device:</p>
+    <button id="mobile-btn">Mobile</button>
+    <button id="pc-btn">PC</button>
+  </div>
+  
+  <!-- Customization -->
+  <div id="customize" class="screen" style="display:none">
+    <h2>Customize Your Game</h2>
+    <div>
+      <label>Character Face:<br>
+        <input type="file" id="char-img-input" accept="image/*" />
+        <img id="char-img-preview" class="preview-img" />
+      </label>
+    </div>
+    <div>
+      <label>Obstacle Image:<br>
+        <input type="file" id="obs-img-input" accept="image/*" />
+        <img id="obs-img-preview" class="preview-img" />
+      </label>
+    </div>
+    <button id="start-btn">Start Game</button>
+  </div>
+  
+  <!-- Countdown -->
+  <div id="countdown" class="screen" style="display:none">
+    <h2 id="countdown-text"></h2>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="game-screen" class="screen" style="display:none">
+    <canvas id="game-canvas" width="800" height="600"></canvas>
+    <div id="score-display"></div>
+    <div id="jump-instruction"></div>
+  </div>
+
+  <!-- Game Over -->
+  <div id="game-over" class="screen" style="display:none">
+    <h2 id="end-title"></h2>
+    <div id="end-score"></div>
+    <button id="retry-btn">Play Again</button>
+    <button id="customize-btn">Customize</button>
+    <button id="change-device-btn">Change Device</button>
+  </div>
+  
+  <script src="app2.js"></script>
+</body>
+</html>
