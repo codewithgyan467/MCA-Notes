@@ -1664,14 +1664,15 @@ a {
 
 .main-title {
   font-size: clamp(2.5rem, 8vw, 4rem);
-  font-weight: var(--font-weight-bold);
-  background: linear-gradient(135deg, var(--color-cream-100), var(--color-teal-300), var(--color-cream-50));
+  font-weight: 800; /* Increased from var(--font-weight-bold) to bolder */
+  background: linear-gradient(135deg, #000000, #242423, #e8dfdf); /* Bright white and bright cyan gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: var(--space-20);
   letter-spacing: var(--letter-spacing-tight);
 }
+
 
 .tagline {
   font-size: clamp(1rem, 3vw, 1.8rem);
@@ -1703,11 +1704,13 @@ a {
   padding: var(--space-32) var(--space-32);
   cursor: pointer;
   text-align: center;
+ 
 }
 
 .main-card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: var(--shadow-lg);
+ 
 }
 
 .main-card:focus-visible {
