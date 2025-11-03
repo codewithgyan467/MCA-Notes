@@ -1,59 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Endless Runner Game</title>
-  <link rel="stylesheet" href="style2.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Avoider - Flappy Bird Game</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-  <!-- Device Selection -->
-  <div id="device-select" class="screen">
-    <h1>Endless Runner</h1>
-    <p>Select your device:</p>
-    <button id="mobile-btn">Mobile</button>
-    <button id="pc-btn">PC</button>
-  </div>
-  
-  <!-- Customization -->
-  <div id="customize" class="screen" style="display:none">
-    <h2>Customize Your Game</h2>
-    <div>
-      <label>Character Face:<br>
-        <input type="file" id="char-img-input" accept="image/*" />
-        <img id="char-img-preview" class="preview-img" />
-      </label>
+    <!-- Platform Selection Screen -->
+    <div id="platformScreen" class="screen active">
+        <div class="container">
+            <h1 class="game-title">Attendance Avoider</h1>
+            <p class="subtitle">Choose Your Platform</p>
+            <div class="platform-buttons">
+                <button class="platform-btn" data-platform="mobile">
+                    <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                    <span>Play on Mobile</span>
+                </button>
+                <button class="platform-btn" data-platform="pc">
+                    <svg class="platform-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <line x1="8" y1="21" x2="16" y2="21"></line>
+                        <line x1="12" y1="17" x2="12" y2="21"></line>
+                    </svg>
+                    <span>Play on PC</span>
+                </button>
+            </div>
+        </div>
     </div>
-    <div>
-      <label>Obstacle Image:<br>
-        <input type="file" id="obs-img-input" accept="image/*" />
-        <img id="obs-img-preview" class="preview-img" />
-      </label>
+
+    <!-- Character Selection Screen -->
+    <div id="characterScreen" class="screen">
+        <div class="container">
+            <h1 class="game-title">Choose Your CR</h1>
+            <div class="character-selection">
+                <div class="character-card" data-character="male">
+                    <div class="character-image">
+                        <img src="malecr.jpg" alt="Priyangshu">
+                    </div>
+                    <h3 class="character-name">Priyangshu</h3>
+                    <div class="character-badge male-badge">Male CR</div>
+                </div>
+                <div class="character-card" data-character="female">
+                    <div class="character-image">
+                        <img src="femalecr.jpg" alt="Shahiba">
+                    </div>
+                    <h3 class="character-name">Shahiba</h3>
+                    <div class="character-badge female-badge">Female CR</div>
+                </div>
+            </div>
+        </div>
     </div>
-    <button id="start-btn">Start Game</button>
-  </div>
-  
-  <!-- Countdown -->
-  <div id="countdown" class="screen" style="display:none">
-    <h2 id="countdown-text"></h2>
-  </div>
 
-  <!-- Game Screen -->
-  <div id="game-screen" class="screen" style="display:none">
-    <canvas id="game-canvas" width="800" height="600"></canvas>
-    <div id="score-display"></div>
-    <div id="jump-instruction"></div>
-  </div>
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-ui">
+            <div class="score-display">
+                <span class="score-label">Score:</span>
+                <span id="currentScore" class="score-value">0</span>
+            </div>
+            <div class="best-score-display">
+                <span class="score-label">Best:</span>
+                <span id="bestScore" class="score-value">0</span>
+            </div>
+        </div>
+        <div id="startPrompt" class="start-prompt">
+            <p class="prompt-text">Click or Press Space to Start!</p>
+            <p class="prompt-subtext">Avoid the ATTENDANCE obstacles!</p>
+        </div>
+    </div>
 
-  <!-- Game Over -->
-  <div id="game-over" class="screen" style="display:none">
-    <h2 id="end-title"></h2>
-    <div id="end-score"></div>
-    <button id="retry-btn">Play Again</button>
-    <button id="customize-btn">Customize</button>
-    <button id="change-device-btn">Change Device</button>
-  </div>
-  
-  <script src="app2.js"></script>
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen">
+        <div class="container">
+            <h1 class="game-over-title">Game Over!</h1>
+            <div class="game-over-card">
+                <div class="final-score-container">
+                    <p class="final-score-label">Your Score</p>
+                    <p id="finalScore" class="final-score-value">0</p>
+                </div>
+                <div class="best-score-container">
+                    <p class="best-score-label">Best Score</p>
+                    <p id="finalBestScore" class="best-score-value">0</p>
+                </div>
+            </div>
+            <div class="game-over-buttons">
+                <button id="playAgainBtn" class="btn btn-primary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                    </svg>
+                    <span>Play Again</span>
+                </button>
+                <button id="changeCharacterBtn" class="btn btn-secondary">
+                    <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Change Character</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="maleMusic" src="udta.mp3" loop></audio>
+    <audio id="femaleMusic" src="panchi.mp3" loop></audio>
+    <audio id="maleCry" src="mcry.mp3"></audio>
+    <audio id="femaleCry" src="fcry.mp3"></audio>
+
+    <script src="app2.js"></script>
 </body>
 </html>
