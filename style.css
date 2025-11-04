@@ -1494,14 +1494,14 @@ html {
 }
 
 body {
-  background: url('axomia.jpg') center/cover fixed no-repeat;
+  background: url('pookie.jpg') center/cover fixed no-repeat;
   overflow-x: hidden;
   min-height: 100vh;
 }
 
 /* THEME BACKGROUNDS */
 body.theme-normal {
-  background: url('axomia.jpg') center/cover fixed no-repeat !important;
+  background: url('pookie.jpg') center/cover fixed no-repeat !important;
 }
 
 body.theme-girly {
